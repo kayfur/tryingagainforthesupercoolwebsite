@@ -420,19 +420,3 @@ pre{
   max-height: 100vh;
 
 }
-
-
-#canvas {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-the-bureau {
-  position: fixed;
-  left: 10px;
-  bottom: 10px;
-  width: calc(100% - 20px);
-}
