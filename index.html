@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index? i hardly know her! hahahahaha</title>
+    <link href="index.css" rel="stylesheet" type="text/css" media="all">
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+              <button class="boot-button">START</button>
+    <div class="filter">
+    <!-- Boot animation overlay (unfiltered, pointer events accurate) -->
+    <div class="boot-overlay">
+      <!-- ts janky as hell -->
+
+      <p class="skip">ESC to skip</p>
+    </div>
+    <!-- Filtered CRT content -->
+    <div id="screen">
+      <audio id="boot-sound" src="resources/audio/hard-disk-drive-start-63229.mp3"></audio>
+      <audio id="the-bureau" src="resources/audio/TheBureau.wav" loop></audio>
+        <!--no mor startup :3-->
+
+         <p class="header">WELCOME TO THE INDEX</p>
+         <p>here you can find any of my other pages. There are many places to explore here, just hover over an orb and find your way around, if you're unsure of a path just look at the description when you hover over it!</p>
+
+        <!--update board-->
+        <div class="bottom-right">
+                      ═	║	╒	╓	╔	╕	╖	╗	╘	╙	╚	╛	╜	╝	╞	╟
+            ╠	╡	╢	╣	╤	╥	╦	╧	╨	╩	╪	╫	╬	
+          <pre class="updates">
+╔═════════════════════════════════════════════╗
+║        !UPDATES!                        !NEW STUFF!          ║
+╠═════════════════════════════════════════════╣
+║  - Added a new orb! (placeholder)                            ║
+║  - added (beta) desmos page, ill tweak it soon               ║
+║  - fully implemented the Desmos page along with some of my   ║
+║    projects                                                  ║
+║                                                              ║
+║                                                              ║
+║                                                              ║
+║                                                              ║
+║                                                              ║
+║                                                              ║
+║                                                              ║
+╚═════════════════════════════════════════════╝
+          </pre>
+        </div>
+        <!--balls lul-->
+        <div class="orb" data-base-x="80" data-base-y="20" data-radius="6" data-speed-x="1.2" data-speed-y="0.7" data-tilt="2">
+          <img src="resources/assets/textures/blocker.gif" alt="corruCyst" width="200" height="200" href="https://corru.observer">
+        </div>
+        <div class="orb" data-base-x="20" data-base-y="64" data-radius="10" data-speed-x="0.8" data-speed-y="1.1" data-tilt="5">
+          <img src="resources/assets/textures/desmos.png" alt="squareSine" width="150" height="150" href="desmos/desmos.html">
+        </div>
+        <div class="orb" data-base-x="50" data-base-y="30" data-radius="7" data-speed-x="1" data-speed-y="2" data-tilt="3">
+          <img src="resources/assets/textures/placeholder.png" alt="squareSine" width="150" height="150" href="https://yugoslavia.best/">
+        </div>
+      <!--deco-->
+      <div class="scanline"></div>
+      <div class="crt-overlay"> 
+      </div>
+    </div>
+    <!--CRT barrel effect-->
+    <div class="svg-filter">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="400" height="266">
+        <defs>
+          <filter id="SphereMapTest" filterUnits="objectBoundingBox" x="0" y="0" width="100%" height="100%">
+            <feImage id="mapa" result="Map" xlink:href="resources/assets/other/displacement3.png"></feImage>
+            <feDisplacementMap id="despMap" in="SourceGraphic" in2="Map" scale="90" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </div>
+  </body>
+</html>
