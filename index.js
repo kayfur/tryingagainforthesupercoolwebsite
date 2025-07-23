@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (bureauAudio) {
       bureauAudio.currentTime = 0;
       bureauAudio.play();
+      startVisualizer();
     }
     overlay.classList.add('fade');
     screen.style.opacity = 1;
@@ -161,6 +162,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   // Make skip button active after 1.5s (for initial state)
+
+
+  
   if (skipBtn) {
     setTimeout(() => {
       skipBtn.classList.add('active');
@@ -169,66 +173,48 @@ document.addEventListener('DOMContentLoaded', function() {
   addOrbImageLinks();
 });
 window.onload = function() {
+function startVisualizer() {
+  var audio = document.getElementById("the-bureau");
+  var canvas = document.getElementById("canvas");
   
-  var file = document.getElementById("thefile");
-  var audio = document.getElementById("audio");
-  
-  file.onchange = function() {
-    var files = this.files;
-    audio.src = URL.createObjectURL(files[0]);
-    audio.load();
-    audio.play();
-    var context = new AudioContext();
-    var src = context.createMediaElementSource(audio);
-    var analyser = context.createAnalyser();
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var ctx = canvas.getContext("2d");
 
-    var canvas = document.getElementById("canvas");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    var ctx = canvas.getContext("2d");
+  var context = new AudioContext();
+  var src = context.createMediaElementSource(audio);
+  var analyser = context.createAnalyser();
 
-    src.connect(analyser);
-    analyser.connect(context.destination);
+  src.connect(analyser);
+  analyser.connect(context.destination);
 
-    analyser.fftSize = 256;
+  analyser.fftSize = 256;
+  var bufferLength = analyser.frequencyBinCount;
+  var dataArray = new Uint8Array(bufferLength);
 
-    var bufferLength = analyser.frequencyBinCount;
-    console.log(bufferLength);
+  var WIDTH = canvas.width;
+  var HEIGHT = canvas.height;
+  var barWidth = (WIDTH / bufferLength) * 2.5;
+  var barHeight;
+  var x = 0;
 
-    var dataArray = new Uint8Array(bufferLength);
+  function renderFrame() {
+    requestAnimationFrame(renderFrame);
+    x = 0;
+    analyser.getByteFrequencyData(dataArray);
+    ctx.fillStyle = "#000";
+    ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
-    var WIDTH = canvas.width;
-    var HEIGHT = canvas.height;
-
-    var barWidth = (WIDTH / bufferLength) * 2.5;
-    var barHeight;
-    var x = 0;
-
-    function renderFrame() {
-      requestAnimationFrame(renderFrame);
-
-      x = 0;
-
-      analyser.getByteFrequencyData(dataArray);
-
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-      for (var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i];
-        
-        var r = barHeight + (25 * (i/bufferLength));
-        var g = 250 * (i/bufferLength);
-        var b = 50;
-
-        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
-
-        x += barWidth + 1;
-      }
+    for (var i = 0; i < bufferLength; i++) {
+      barHeight = dataArray[i];
+      var r = barHeight + (25 * (i/bufferLength));
+      var g = 250 * (i/bufferLength);
+      var b = 50;
+      ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+      ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+      x += barWidth + 1;
     }
+  }
 
-    audio.play();
-    renderFrame();
-  };
-};
+  renderFrame();
+}
