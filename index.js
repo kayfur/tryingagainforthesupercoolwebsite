@@ -168,36 +168,67 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   addOrbImageLinks();
 });
+window.onload = function() {
+  
+  var file = document.getElementById("thefile");
+  var audio = document.getElementById("audio");
+  
+  file.onchange = function() {
+    var files = this.files;
+    audio.src = URL.createObjectURL(files[0]);
+    audio.load();
+    audio.play();
+    var context = new AudioContext();
+    var src = context.createMediaElementSource(audio);
+    var analyser = context.createAnalyser();
 
-const audioElement = document.getElementById('the-bureau');
-const volumeBox = document.getElementById('body');
+    var canvas = document.getElementById("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var ctx = canvas.getContext("2d");
 
-const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-const sourceNode = audioContext.createMediaElementSource(audioElement);
-const analyser = audioContext.createAnalyser();
-const dataArray = new Uint8Array(analyser.fftSize);
+    src.connect(analyser);
+    analyser.connect(context.destination);
 
-sourceNode.connect(analyser);
-analyser.connect(audioContext.destination);
+    analyser.fftSize = 256;
 
-function updateVolume() {
-    analyser.getByteTimeDomainData(dataArray);
+    var bufferLength = analyser.frequencyBinCount;
+    console.log(bufferLength);
 
-    let sum = 0;
-    for (let i = 0; i < dataArray.length; i++) {
-        let val = dataArray[i] - 128;
-        sum += val * val;
+    var dataArray = new Uint8Array(bufferLength);
+
+    var WIDTH = canvas.width;
+    var HEIGHT = canvas.height;
+
+    var barWidth = (WIDTH / bufferLength) * 2.5;
+    var barHeight;
+    var x = 0;
+
+    function renderFrame() {
+      requestAnimationFrame(renderFrame);
+
+      x = 0;
+
+      analyser.getByteFrequencyData(dataArray);
+
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+
+      for (var i = 0; i < bufferLength; i++) {
+        barHeight = dataArray[i];
+        
+        var r = barHeight + (25 * (i/bufferLength));
+        var g = 250 * (i/bufferLength);
+        var b = 50;
+
+        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+        x += barWidth + 1;
+      }
     }
-    let rms = Math.sqrt(sum / dataArray.length);
 
-    // Map volume to brightness (clamp between 20% and 90%)
-    let brightness = Math.min(90, Math.max(20, rms * 2.5));
-    volumeBox.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
-
-    requestAnimationFrame(updateVolume);
-}
-
-audioElement.addEventListener('play', () => {
-    audioContext.resume();
-    updateVolume();
-});
+    audio.play();
+    renderFrame();
+  };
+};
