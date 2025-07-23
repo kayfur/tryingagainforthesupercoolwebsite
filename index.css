@@ -8,14 +8,14 @@ body{
 /*--*/
 @font-face {
     font-family: 'CMD';
-    src: url('resources/fonts/CMD.ttf') format('opentype');
+    src: url('fonts/CMD.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'spacemono';
-    src: url('resources/fonts/SpaceMono-Regular.ttf') format('opentype');
+    src: url('fonts/SpaceMono-Regular.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
