@@ -168,3 +168,36 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   addOrbImageLinks();
 });
+
+const audioElement = document.getElementById('the-bureau');
+const volumeBox = document.getElementById('body');
+
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+const sourceNode = audioContext.createMediaElementSource(audioElement);
+const analyser = audioContext.createAnalyser();
+const dataArray = new Uint8Array(analyser.fftSize);
+
+sourceNode.connect(analyser);
+analyser.connect(audioContext.destination);
+
+function updateVolume() {
+    analyser.getByteTimeDomainData(dataArray);
+
+    let sum = 0;
+    for (let i = 0; i < dataArray.length; i++) {
+        let val = dataArray[i] - 128;
+        sum += val * val;
+    }
+    let rms = Math.sqrt(sum / dataArray.length);
+
+    // Map volume to brightness (clamp between 20% and 90%)
+    let brightness = Math.min(90, Math.max(20, rms * 2.5));
+    volumeBox.style.backgroundColor = `hsl(0, 0%, ${brightness}%)`;
+
+    requestAnimationFrame(updateVolume);
+}
+
+audioElement.addEventListener('play', () => {
+    audioContext.resume();
+    updateVolume();
+});
