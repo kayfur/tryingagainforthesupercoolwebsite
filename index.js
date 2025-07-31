@@ -1,4 +1,4 @@
-// Animate all .orb elements with custom parameters from data attributes
+// meow
 (function wobbleAllOrbs() {
   const els = document.querySelectorAll('.orb');
   if (!els.length) return;
