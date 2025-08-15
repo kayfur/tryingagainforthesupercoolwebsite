@@ -88,3 +88,21 @@ p{
   margin: 1em 0 0.5em 0;
   text-align: center;
 }
+
+.backtrackicon{
+  animation: zrot 3s ease-in-out 0.5s infinite alternate forwards;
+  radius: 50%;
+  
+}
+
+@keyframes zrot{
+     from {
+        transform: rotateZ(0deg);
+      }
+      50% {
+        transform: rotateZ(180deg);
+      }
+      to {
+        transform: rotateZ(-0px);
+      }
+}
