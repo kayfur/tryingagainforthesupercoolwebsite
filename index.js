@@ -6,6 +6,7 @@
   function animate() {
     const t = (Date.now() - start) / 1000;
     els.forEach(el => {
+      const s = parseFloat(el.dataset.size) * (window.innerWidth / 100) || 50;
       const baseX = parseFloat(el.dataset.baseX) || 50;
       const baseY = parseFloat(el.dataset.baseY) || 50;
       const r = parseFloat(el.dataset.radius) || 6;
@@ -15,6 +16,8 @@
       const x = baseX + (r * Math.sin(t * speedX)) / window.innerWidth * 100;
       const y = baseY + (r * Math.cos(t * speedY)) / window.innerHeight * 100;
       const rotate = tilt * Math.sin(t * 1.5);
+      el.style.height = `${s}%`;
+      el.style.width = `${s}%`;
       el.style.top = `${y}%`;
       el.style.left = `${x}%`;
       el.style.transform = `translate(-50%, -50%) rotate(${rotate}deg)`;
@@ -168,3 +171,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   addOrbImageLinks();
 });
+
