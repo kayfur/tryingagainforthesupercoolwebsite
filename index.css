@@ -256,7 +256,7 @@ pre{
   right: 0;
   background: rgba(18, 16, 16, 0.4);
   opacity: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   animation: flicker 0.15s infinite;
 }
@@ -269,9 +269,17 @@ pre{
   bottom: 0;
   right: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.09), rgba(0, 255, 0, .04), rgba(0, 0, 255, 0.1));
-  z-index: 2;
+  z-index: 3;
   background-size: 100% .3125rem, .5rem 100%;
   pointer-events: none;
+}
+
+.hover-highlight{
+  z-index: -10;
+}
+
+.hover-highlight:hover{
+  z-index: 2;
 }
 
 .orb {
@@ -420,4 +428,5 @@ pre{
   max-height: 100vh;
 
 }
+
 
