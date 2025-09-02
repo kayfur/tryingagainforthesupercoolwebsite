@@ -429,4 +429,10 @@ pre{
 
 }
 
-
+.hover-highlight {
+  display: none;
+}
+    
+.orb:hover + .hover-highlight {
+  display: block;
+}
