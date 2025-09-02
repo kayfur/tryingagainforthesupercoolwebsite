@@ -305,6 +305,7 @@ pre{
   transition: all 0.5s ease-in-out;
   width:220px;
   height:220px;
+  z-index: -1;
 }
 
 #screen {
@@ -429,10 +430,3 @@ pre{
 
 }
 
-.hover-highlight {
-  display: none;
-}
-    
-.orb:hover + .hover-highlight {
-  display: block;
-}
