@@ -19,7 +19,7 @@
         if (!response.ok) {
           throw new Error('WARNING::PROHIBITIVE_INCOHERENCY_DETECTED//COULDNT_FIND_THOUGHTFORM');
         }
-        return response.json();
+        return response.test();
       })
       .then(data => {
         const weatherOverview = data.weather_overview || "ERROR::UNRENDERABLEish_OUTPUT";
