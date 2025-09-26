@@ -22,7 +22,7 @@
         return response.text();
       })
       .then(data => {
-        const weatherOverview = data.weather_overview || "ERROR::UNRENDERABLEish_OUTPUT";
+        const weatherOverview = data.name || "ERROR::UNRENDERABLEish_OUTPUT";
         document.getElementById('weather').textContent = weatherOverview;
       })
       .catch(error => {
