@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="welcome">
-        <h1>How beholds you K?</h1>
+        <h1>meow?</h1>
          <h1>Current Weather</h1>
             <p id="weather">Loading...</p>
     </div>
@@ -19,7 +19,7 @@
         if (!response.ok) {
           throw new Error('WARNING::PROHIBITIVE_INCOHERENCY_DETECTED//COULDNT_FIND_THOUGHTFORM');
         }
-        return response.test();
+        return response.text();
       })
       .then(data => {
         const weatherOverview = data.weather_overview || "ERROR::UNRENDERABLEish_OUTPUT";
