@@ -13,7 +13,7 @@
          <h1>Current Weather</h1>
             <p id="weather">Loading...</p>
     </div>
-    <skript>
+    <script>
         fetch('https://api.openweathermap.org/data/3.0/onecall/overview?lat=31.344412&lon=-94.607179&appid=a16e6f878d0070be0c1818af74186a3b&units=metric') 
       .then(response => {
         if (!response.ok) {
@@ -29,6 +29,6 @@
         console.error('ERROR::', error);
         document.getElementById('weather').textContent = "ERROR::UNRENDERABLE_OUTPUT";
       });
-    </skript>
+    </script>
 </body>
 </html>
