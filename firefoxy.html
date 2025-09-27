@@ -11,24 +11,28 @@
     <div class="welcome">
         <h1>meow?</h1>
          <h1>Current Weather</h1>
-            <p id="weather">Loading...</p>
-    </div>
-    <script>
-  fetch('https://api.weather.gov/points/39.7456,-97.0892') 
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('WARNING::PROHIBITIVE_INCOHERENCY_DETECTED//COULDNT_FIND_THOUGHTFORM');
-        }
-        return response.text();
-      })
-      .then(data => {
-        const weatherOverview = data.name || "ERROR::UNRENDERABLEish_OUTPUT";
-        document.getElementById('weather').textContent = weatherOverview;
-      })
-      .catch(error => {
-        console.error('ERROR::', error);
-        document.getElementById('weather').textContent = "ERROR::UNRENDERABLE_OUTPUT";
-      });
-    </script>
+<div id="forecast"></div>
+
+<script>
+async function getForecast() {
+  const pointResp = await fetch(`https://api.weather.gov/points/0,0`);
+  const pointData = await pointResp.json();
+  const forecastUrl = pointData.properties.forecast;
+  
+  const forecastResp = await fetch(forecastUrl);
+  const forecastData = await forecastResp.json();
+  const today = forecastData.properties.periods[0];
+
+  document.getElementById("forecast").innerHTML = `
+    <h2>${today.name}</h2>
+    <img src="${today.icon}" alt="${today.shortForecast}">
+    <p>${today.shortForecast}, ${today.temperature}°${today.temperatureUnit}</p>
+    <p>Wind: ${today.windSpeed} ${today.windDirection}</p>
+    <small>Forecast by NOAA/NWS</small>
+  `;
+}
+
+getForecast();
+</script>
 </body>
 </html>
