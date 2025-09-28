@@ -11,30 +11,28 @@
 <h1>How beholds you K?</h1>
 
   <!-- meow -->
-  <ol>
+  <ul>
     <li>
-      <p id="0"></p>
+      <p class="day" id="0"></p>
       <p class="description" id="detailedforecast0"></p>
     </li>
     <li>
-      <p id="1"></p>
+      <p class="day" id="1"></p>
       <p class="description" id="detailedforecast1"></p>
     </li>
     <li>
-      <p id="2"></p>
+      <p class="day" id="2"></p>
       <p class="description" id="detailedforecast2"></p>
     </li>
     <li>
-      <p id="3"></p>
+      <p class="day" id="3"></p>
       <p class="description" id="detailedforecast3"></p>
     </li>
     <li>
-      <p id="4"></p>
+      <p class="day" id="4"></p>
       <p class="description" id="detailedforecast4"></p>
     </li>
-  </ol>
-
-  </ol>
+  </ul>
   <script>
     fetch('https://api.weather.gov/gridpoints/SHV/42,16/forecast')
       .then(response => {
