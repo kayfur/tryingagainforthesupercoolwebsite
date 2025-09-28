@@ -11,25 +11,34 @@
 <h1>How beholds you K?</h1>
 
   <!-- meow -->
-  <p id="0"></p>
-  <p class="description" id="detailedforecast0"></p>
+  <ol>
+    <li>
+      <p id="0"></p>
+      <p class="description" id="detailedforecast0"></p>
+    </li>
+    <li>
+      <p id="1"></p>
+      <p class="description" id="detailedforecast1"></p>
+    </li>
+    <li>
+      <p id="2"></p>
+      <p class="description" id="detailedforecast2"></p>
+    </li>
+    <li>
+      <p id="3"></p>
+      <p class="description" id="detailedforecast3"></p>
+    </li>
+    <li>
+      <p id="4"></p>
+      <p class="description" id="detailedforecast4"></p>
+    </li>
+  </ol>
 
-  <p id="1"></p>
-  <p class="description" id="detailedforecast1"></p>
-
-  <p id="2"></p>
-  <p class="description" id="detailedforecast2"></p>
-
-  <p id="3"></p>
-  <p class="description" id="detailedforecast3"></p>
-
-  <p id="4"></p>
-  <p class="description" id="detailedforecast4"></p>
-
+  </ol>
   <script>
     fetch('https://api.weather.gov/gridpoints/SHV/42,16/forecast')
       .then(response => {
-        if (!response.ok) throw new Error("Network response was not ok");
+        if (!response.ok) throw new Error("ERROR::'MINDSCI SERVERS OFFLINE''");
         return response.json();
       })
       .then(data => {
@@ -48,7 +57,7 @@
         }
       })
       .catch(error => {
-        console.error("Failed to fetch forecast:", error);
+        console.error("the cyst blew up dude", error);
       });
   </script>
 </body>
