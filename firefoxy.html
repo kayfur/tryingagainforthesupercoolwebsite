@@ -9,33 +9,47 @@
 <body>
 <div class="welcome">
 <h1>How beholds you K?</h1>
-<script type="text/javascript" src="https://forecast.weather.gov/js/jquery-cookie.js"></script>
-<script type="text/javascript" src="https://forecast.weather.gov/js/MyForecastWidget.js"></script>
-<div id="myfcst-widget">
-<div id="myfcst">
-<form id="myfcst-form" action="https://forecast.weather.gov/widgets/MyForecastWidget.php" style="display: none;">
-<span id="myfcst-title">Customize Your <strong>Weather.gov</strong></span>
-</form>
-        <div id="myfcst-fcst" style="display: block;"><div><span id="myfcst-title">MY FORECAST</span>
-          <p class="myfcst-location">Lufkin TX</p>
-          <img src="//forecast.weather.gov/newimages/medium/bkn.png" id="myfcst-current">
-          <p id="myfcst-location">Mostly Cloudy</p>
-          <span id="myfcst-tempf">99999°F</span>
-            <div class="myfcst-hr"></div>
-            <div class="myfcst-later"><p class="myfcst-location">This Afternoon</p>
-              <img src="https://forecast.weather.gov/newimages/medium/few.png">
-              <p class="myfcst-forecast">Sunny</p>
-              <span id="myfcst-high">High: 89°F</span></div>
-              <br>
-              <div class="myfcst-later"><p class="myfcst-location">Tonight</p>
-                <img src="https://forecast.weather.gov/newimages/medium/nfew.png">
-                <p class="myfcst-forecast">Mostly Clear</p>
-                <span id="myfcst-low">Low: 61°F</span></div>
-                <div class="myfcst-hr"></div>
-                </div></div></div>
-<div id="myfcst-loading" style="display: none;">LOADING...</div>
-</div>
-</div>
-<div class="div-full cms-content" id="cms_page_badges"></div>
+
+  <!-- meow -->
+  <p id="0"></p>
+  <p class="description" id="detailedforecast0"></p>
+
+  <p id="1"></p>
+  <p class="description" id="detailedforecast1"></p>
+
+  <p id="2"></p>
+  <p class="description" id="detailedforecast2"></p>
+
+  <p id="3"></p>
+  <p class="description" id="detailedforecast3"></p>
+
+  <p id="4"></p>
+  <p class="description" id="detailedforecast4"></p>
+
+  <script>
+    fetch('https://api.weather.gov/gridpoints/SHV/42,16/forecast')
+      .then(response => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
+      .then(data => {
+        const periods = data.properties.periods;
+
+        // meow.... meow
+        for (let i = 0; i < 5; i++) {
+          const period = periods[i];
+          const titleEl = document.getElementById(`${i}`);
+          const descEl = document.getElementById(`detailedforecast${i}`);
+
+          if (titleEl && descEl) {
+            titleEl.textContent = period.name;
+            descEl.textContent = period.detailedForecast;
+          }
+        }
+      })
+      .catch(error => {
+        console.error("Failed to fetch forecast:", error);
+      });
+  </script>
 </body>
 </html>
