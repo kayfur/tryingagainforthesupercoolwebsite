@@ -9,11 +9,11 @@
     margin: 5px 0;
     color: #333;
 }
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
-.libre-barcode-128-text-regular {
-  font-family: 'BC', system-ui;
-  font-weight: 400;
-  font-style: normal;
+@font-face {
+    font-family: 'BC';
+    src: url('fonts/LibreBarcode128Text-Regular[1].ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
     font-family: 'spacemono';
