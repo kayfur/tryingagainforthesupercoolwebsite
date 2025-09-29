@@ -19,7 +19,7 @@ body{
     margin: 1.2vw 0vw;
     color: #e1e1e1;
 }
-.weatherbox {
+.weatherbox, weatherheader {
     margin: 2vw;
     padding: 1.5vw;
     float: right;
@@ -29,6 +29,7 @@ body{
     height: 70vh;
     overflow-y:scroll;
 }
+
 @font-face {
     font-family: 'BC';
     src: url('fonts/LibreBarcode128Text-Regular[1].ttf') format('opentype');
