@@ -3,6 +3,11 @@ body{
     background-color: black;
     color: white;
 }
+a {
+    font-family: 'BC', 'spacemono', system-ui;
+    font-size: 3rem;
+    padding: 4vw
+}
 .welcome{
     font-family: 'spacemono', system-ui;
 }
