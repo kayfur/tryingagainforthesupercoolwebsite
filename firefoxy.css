@@ -19,7 +19,7 @@ body{
     margin: 1.2vw 0vw;
     color: #e1e1e1;
 }
-.weatherbox, weatherheader {
+.weatherbox, .weatherheader {
     margin: 2vw;
     padding: 1.5vw;
     float: right;
