@@ -27,10 +27,14 @@ body{
     overflow-y:scroll;
 }
 .weatherheader {
+    font-size: 2rem;
     font-family: 'spacemono', system-ui;
     margin: 2vw;
     padding: 1.5vw;
-    float: right;
+    justify-content:center;
+    position:fixed;
+    background: black;
+    border:magenta dashed;
 }
 
 @font-face {
