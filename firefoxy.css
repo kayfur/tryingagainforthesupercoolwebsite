@@ -2,13 +2,20 @@
     font-family: 'spacemono', system-ui;
     font-size: 1.2em;
     color: #555;
-    margin-top: 10px ;
+    margin-top: 7% ;
 }
 .day {
     font-family: 'BC', system-ui;
     font-size: 5rem;
-    margin: 5px 0;
+    margin: 5% 0%;
     color: #333;
+}
+.weatherbox {
+    left:80%;
+    right:0%;
+    margin:5%;
+    padding:7%;
+    boarder: black 1.5%;
 }
 @font-face {
     font-family: 'BC';
