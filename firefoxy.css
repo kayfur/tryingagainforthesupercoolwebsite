@@ -19,15 +19,17 @@ body{
     margin: 1.2vw 0vw;
     color: #e1e1e1;
 }
-.weatherbox, .weatherheader {
+.weatherbox {
     margin: 2vw;
     padding: 1.5vw;
     float: right;
-    boarder-style: groove;
-    border-color: red;
-    border-width: 4px;
     height: 70vh;
     overflow-y:scroll;
+}
+.weatherheader {
+    margin: 2vw;
+    padding: 1.5vw;
+    float: right;
 }
 
 @font-face {
