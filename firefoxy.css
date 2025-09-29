@@ -1,15 +1,23 @@
+
+body{
+    background-color: black;
+    color: white;
+}
+.welcome{
+    font-family: 'spacemono', system-ui;
+}
 .description {
     font-family: 'spacemono', system-ui;
     font-size: 1.2em;
-    color: #555;
+    color: #a8a8a8;
     margin-top: 0vw ;
     width: 35vw
-}
+} 
 .day {
     font-family: 'BC', system-ui;
     font-size: 5rem;
     margin: 1.2vw 0vw;
-    color: #333;
+    color: #e1e1e1;
 }
 .weatherbox {
     margin: 2vw;
