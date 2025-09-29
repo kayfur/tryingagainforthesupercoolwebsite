@@ -27,6 +27,7 @@ body{
     overflow-y:scroll;
 }
 .weatherheader {
+    font-family: 'spacemono', system-ui;
     margin: 2vw;
     padding: 1.5vw;
     float: right;
