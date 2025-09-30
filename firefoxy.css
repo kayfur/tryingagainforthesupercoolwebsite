@@ -26,9 +26,9 @@ a {
 }
 .day2 {
     font-family: 'BC', system-ui;
-    font-size: 4rem;
+    font-size: 5rem;
     margin: 1.2vw 0vw;
-    color: #c1c1c1;
+    color: #e1e1e1;
 }
 .weatherbox {
     top: 2.1rem;
