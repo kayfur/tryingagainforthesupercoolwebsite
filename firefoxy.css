@@ -24,6 +24,12 @@ a {
     margin: 1.2vw 0vw;
     color: #e1e1e1;
 }
+.day {
+    font-family: 'BC', system-ui;
+    font-size: 4rem;
+    margin: 1.2vw 0vw;
+    color: #c1c1c1;
+}
 .weatherbox {
     top: 2.1rem;
     margin: 2vw;
