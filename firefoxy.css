@@ -23,12 +23,15 @@ a {
     font-size: 5rem;
     margin: 1.2vw 0vw;
     color: #e1e1e1;
+    border-top: #00ffff dashed;
+    padding-top: 1rem;
 }
 .day2 {
     font-family: 'BC', system-ui;
-    font-size: 5rem;
-    margin: 1.2vw 0vw;
-    color: #e1e1e1;
+    font-size: 3rem;
+    margin: 1vw 0vw;
+    color: #6b6b6b;
+    padding-bottom:.4rem;
 }
 .weatherbox {
     top: 2.1rem;
