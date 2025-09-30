@@ -6,8 +6,28 @@ body{
 a {
     font-family: 'BC', 'spacemono', system-ui;
     font-size: 3rem;
-    padding: 4vw
+    padding: 4vw;
+    color: cyan;
+    text-decoration:none;
+        transition: text-color 3s, background 3s;
 }
+a:visited {
+    color: cyan;
+}
+
+a:hover { 
+    background: linear-gradient(90deg, #ff69f8, #b71db0, #a800c1,#b71db0, #e047d9);
+    background-size: 1200% 1200%;
+    animation: rainbow 5s linear infinite;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+
+}
+@keyframes rainbow {
+    0%{background-position:0% 0%}
+    100%{background-position:95% 0%}
+} 
+
 .welcome{
     font-family: 'spacemono', system-ui;
 }
