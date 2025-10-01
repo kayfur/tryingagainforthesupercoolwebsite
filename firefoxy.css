@@ -3,13 +3,17 @@ body{
     background-color: black;
     color: white;
 }
+.welcome{
+    font-family: 'spacemono', system-ui;
+}
 a {
     font-family: 'BC', 'spacemono', system-ui;
     font-size: 3rem;
     padding: 4vw;
     color: cyan;
     text-decoration:none;
-        transition: text-color 3s, background 3s;
+    justify-self:center;
+        transition: padding 1s, font-size 1s, text-color 3s, background 3s;
 }
 a:visited {
     color: cyan;
@@ -21,6 +25,9 @@ a:hover {
     animation: rainbow 5s linear infinite;
     -webkit-background-clip: text; 
     -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
+    padding:3vw;
+
 
 }
 @keyframes rainbow {
@@ -28,9 +35,13 @@ a:hover {
     100%{background-position:95% 0%}
 } 
 
-.welcome{
+.reminders{
+    color:white;
+    padding: 2rem;
     font-family: 'spacemono', system-ui;
+    position:fixed
 }
+
 .description {
     font-family: 'spacemono', system-ui;
     font-size: 1.2em;
