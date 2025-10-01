@@ -6,6 +6,12 @@ body{
 .welcome{
     font-family: 'spacemono', system-ui;
 }
+.linkcontainer {
+    width: 100vw;
+    hight: 15vh;
+    position: fixed;
+    margins: 1rem;
+}
 a {
     font-family: 'BC', 'spacemono', system-ui;
     font-size: 3rem;
@@ -13,27 +19,17 @@ a {
     color: cyan;
     text-decoration:none;
     justify-self:center;
-        transition: padding 1s, font-size 1s, text-color 3s, background 3s;
+        transition: padding 1s, font-size 1s, color .3s, background 3s;
 }
 a:visited {
     color: cyan;
 }
 
 a:hover { 
-    background: linear-gradient(90deg, #ff69f8, #b71db0, #a800c1,#b71db0, #e047d9);
-    background-size: 1200% 1200%;
-    animation: rainbow 5s linear infinite;
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
+    color:yellow;
     font-size: 3.5rem;
     padding:3vw;
-
-
 }
-@keyframes rainbow {
-    0%{background-position:0% 0%}
-    100%{background-position:95% 0%}
-} 
 
 .reminders{
     color:white;
