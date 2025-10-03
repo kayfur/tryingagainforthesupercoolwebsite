@@ -9,21 +9,55 @@
 <body>
 <h1 class="welcome">How beholds you K?</h1>
   <!-- meow -->
+  <div class=wrapper>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://discord.com/channels/@me/">Discord</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://duckduckgo.com">search</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://github.com/kayfur">github</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://youtu.be">youtube</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://mail.google.com/mail/u/0">mail</a>
+      
+        
+        <div class="dropdown">
+          <button onclick="dropdown()" class="dropbtn">EDU</button>
+          <div id="myDropdown" class="dropdown-content">
+              <a href="1">test1</a>
+              <a href="2">test2</a>
+              <a href="3">test3</a>
+          </div>
+        </div>
+        <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function dropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
-  <a target="_blank" rel="nooppenernoreferrer" href="https://discord.com/channels/@me/">Discord</a>
-  <a target="_blank" rel="nooppenernoreferrer" href="https://duckduckgo.com">search</a>
-  <a target="_blank" rel="nooppenernoreferrer" href="https://github.com/kayfur">github</a>
-  <a target="_blank" rel="nooppenernoreferrer" href="https://youtu.be">youtube</a>
-  <a target="_blank" rel="nooppenernoreferrer" href="https://mail.google.com/mail/u/0">mail</a>
-
+// Close the dropdown if the user clicks outside of it
+window.onclick = dropdown(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+        </script>
+  </div>
 <div class="reminders">
       <p>
           work on DIM LP
       </p>
-        <p>
-          talk to fc
+      <p>
+          talk to fc x3
       </p>
-        <p>
+      <p>
+          talk to other fc
+      </p>
+      <p>
           find somethign else i need to remember
       </p>
 </div>
