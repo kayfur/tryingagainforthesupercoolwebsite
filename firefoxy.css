@@ -35,8 +35,6 @@
 
 .dropdown a:hover {background-color: #ddd;}
 
-.show {display: block;}
-
 body{
     background-color: black;
     color: white;
@@ -47,7 +45,7 @@ body{
 .linkcontainer {
     width: 100vw;
     hight: 15vh;
-    position: fixed;
+    position: reletive;
     margins: 1rem;
 }
 a {
@@ -78,10 +76,11 @@ a:hover {
 
 .description {
     font-family: 'spacemono', system-ui;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: #a8a8a8;
     margin-top: 0vw ;
     width: 35vw
+    padding: 1.2rem;
 } 
 .day {
     font-family: 'BC', system-ui;
