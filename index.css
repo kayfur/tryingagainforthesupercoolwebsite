@@ -1,4 +1,3 @@
-
 body{
   background-color: rgb(0, 0, 0);
   font-family: 'CMD';
@@ -19,70 +18,10 @@ body{
     font-weight: normal;
     font-style: normal;
 }
-
-.filter{
-     filter: url(#SphereMapTest);
-}
-
 .hidden {
     opacity: 0;
     pointer-events: none;
 }
-
-.header {
-    font-family: CMD, monospace;
-    color: rgb(252, 127, 255);
-    animation: textShadow 1.6s infinite !important;
-    font-size: 5rem;
-    text-align: left !important;
-    position: absolute;
-    top: 3vh;
-    left: 2rem;
-    right: auto;
-    margin: 0;
-}
-
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-
-
-
 /*--*/
 p, pre {
   color: rgb(252, 127, 255);
@@ -99,7 +38,6 @@ p, pre {
   width: 40vw;
   max-width: 50vw;
   white-space: pre-wrap;
-
 }
 /*--*/
 pre{
@@ -109,38 +47,11 @@ pre{
   font-family: 'CMD', monospace;
   animation: textShadow 1.6s infinite !important;
 }
-
-.skip{
-  color: rgba(255, 255, 255, 0.2);
-  font-family: monospace;
-  font-size: 1.5rem;
-  right: 2rem;
-  top: 2.7rem;
-  position: absolute;
-}
-
 .botttom-right{
   bottom: 0;
   right: 0;
   position: absolute;
 }
-
-.updates{
-  color: rgb(252, 127, 255);
-  text-shadow: 0px 0px 23px rgb(246, 0, 255), 0px 0px 23px rgb(246, 0, 255), 0px 0px 23px rgb(246, 0, 255);
-  font-size: 1.5rem;
-  font-family: 'CMD', monospace;
-  animation: textShadow 1.6s infinite !important;
-  text-align: left !important;
-  position: absolute;
-  top: 40%;
-  left: 60%;
-  margin: 5px;
-  width: 40vw;
-  max-width: 50vw;
-  white-space: pre-wrap;
-}
-
 /*flicker effect*/
 @keyframes flicker {
   0% {
@@ -273,62 +184,11 @@ pre{
     text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
   }
 }
-
-.crt-overlay {
-  position: fixed;
-  top: 1.5vh;
-  left: 2.7px;
-  bottom: 5vh;
-  width: 96vw;
-  height: 86vh;
-  pointer-events: none;
-  z-index: 99999999;
-  animation: textShadow 1.6s infinite !important;
-  margin: 0;
-  overflow: hidden;
-}
-.crt-overlay::after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(18, 16, 16, 0.4);
-  opacity: 0;
-  z-index: 3;
-  pointer-events: none;
-  animation: flicker 0.15s infinite;
-}
-.crt-overlay::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.09), rgba(0, 255, 0, .04), rgba(0, 0, 255, 0.1));
-  z-index: 3;
-  background-size: 100% .3125rem, .5rem 100%;
-  pointer-events: none;
-}
-
-.hover-highlight{
-  z-index: -10;
-}
-
-.hover-highlight:hover{
-  z-index: 2;
-}
-
 .orb {
   position: fixed;
-  z-index: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: -1;
+  top: 0%;
+  right: 0%;
   pointer-events: auto;
 }
 
@@ -336,19 +196,17 @@ pre{
   transition: all 0.3s ease;
   border-radius: 50%;
   object-fit: cover;
-  width: 200px;
-  height: 200px;
+  width: 5vw;
+  height: 5vh;
   display: block;
   cursor: pointer;
   pointer-events: auto;
 }
 .orb img:hover {
   transition: all 0.5s ease-in-out;
-  width:220px;
-  height:220px;
-  z-index: -1;
+  width: 7vw;
+  height: 7vh;
 }
-
 #screen {
     width: 100vw;
     height: 100vh;
@@ -402,73 +260,3 @@ pre{
         bottom: 12.4%;
     }
 }
-
-.boot-overlay {
-  position: fixed;
-  z-index: 20000;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 5s;
-  opacity: 1;
-  pointer-events: auto;
-}
-.boot-overlay.fade {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.boot-button {
-    height: 33px;
-    padding: 2px 8px;
-    border: 1px solid #ff00d9;
-    background: black;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    top: 50vh;
-    left: 50vw;
-    font-family: 'CMD', monospace;
-    z-index: 10000;
-}
-.boot-button:hover {
-    height: 33px;
-    padding: 2px 8px;
-    border: 1px solid #ff00d9;
-    background: black;
-    color: rgb(177, 21, 159);
-    transition: background-color 0.2s ease-in-out;
-}
-.boot-button:active {
-    height: 33px;
-    padding: 2px 8px;
-    border: 1px solid #ff00d9;
-    background: rgb(177, 21, 159);
-    color: rgb(255, 255, 255);
-}
-/*fix later*/
-.boot-terminal{
-  width: 100vw;
-  height: 100vh;
-  left: 3.5vw;
-  top: 3.5vw;
-  min-width: 100vw;
-  min-height: 100vh;
-  position: absolute;
-  display: flex;
-  align-items: left;
-  justify-content: left;
-  overflow: hidden;
-  transition: opacity .4s ease-in-out;
-  pointer-events: auto;
-  margin: 0;
-  max-width: 100vw;
-  max-height: 100vh;
-
-}
-
-
