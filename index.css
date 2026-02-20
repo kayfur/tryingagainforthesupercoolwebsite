@@ -4,6 +4,11 @@ body{
   overflow: hidden;
   margin-left: 12px;
 }
+.cover {
+  background-image: url('assets/textures/space.jpg');
+  position: absolute;
+  fill: cover;
+}
 /*--*/
 @font-face {
     font-family: 'CMD';
@@ -260,3 +265,4 @@ pre{
         bottom: 12.4%;
     }
 }
+
