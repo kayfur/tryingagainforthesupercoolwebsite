@@ -1,6 +1,6 @@
 body{
   background-image: url('assets/textures/pockmarksdark.gif'),url('assets/textures/hubble_ngc2031-jpg-3832570715.jpg');
-
+  overflow: hidden;
   font-family: 'CMD';
 }
 @media (min-width: 600px){
@@ -34,7 +34,7 @@ body{
   border: 2px dashed black;
   padding: 1em;
   margin: .5em;
-  transform: transform 2s ease-in-out;
+  transition: transform .5s ease-in-out;
   background:
   linear-gradient(#000, #000) padding-box,
   repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple, red) border-box;
