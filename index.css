@@ -1,13 +1,13 @@
-.cross{
-    cursor: crosshair;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-}
 body{
   background-image: url('assets/textures/pockmarksdark.gif'),url('assets/textures/hubble_ngc2031-jpg-3832570715.jpg');
-  background-repeat:repeat;
+
   font-family: 'CMD';
+}
+@media (min-width: 600px){
+  .left-box{
+      margin-top: -3.56em;
+      background-repeat:repeat-x;
+  }
 }
 .bottom-flex{
   bottom: 2%;
@@ -26,8 +26,6 @@ body{
         height: 37vh;
     }
 }
-
-
 .bottom-text-box p:hover {
   transform: scale(1.1);
   
@@ -55,23 +53,25 @@ body{
 .top-right-corner {
   transition: transform 1s ease-in-out;
   translate: 40vw -50vh;
+  overflow-x: clip;
 }
-
+@media (max-width: 600px){
+  .top-right-corner{
+    translate: 0vw 30vh;
+  }
+}
 .top-right-corner:hover { transform: scale(.98); }
-
 .spin {
   animation: spin 480s linear infinite;
   overflow: clip;
-  scroll-behavior: unset;
+  scroll-behavior: revert-layer;
   position: fixed;
 }
-
 @media (max-width: 600px){
   .spin {
     animation-duration: 90s;
   }
 }
-
 @media (min-width: 600px){
   .top-right-corner {
   }
@@ -104,8 +104,18 @@ body{
   z-index: 0;
 }
 @media (min-width: 600px){
+  .black-box{
+    bottom: -5%;
+  }
+}
+@media (min-width: 600px){
   .left-box{
       margin-top: -3.56em;
+  }
+}
+@media (max-width: 600px){
+  .left-box{
+      transform: translateY(39vh);
   }
 }
 .left-box{
@@ -114,6 +124,12 @@ body{
   margin-left: -1rem;
   padding-left: 10%;
   z-index: 5;
+}
+@media (max-width: 600px){
+.left-box{
+          margin-top: -30%;
+          width: 100vw;
+         }
 }
 @media (min-width: 600px){ 
 .left-box-anim{
@@ -126,23 +142,35 @@ body{
     height: 4rem;
     animation: rolling 3s linear infinite;
   }}
-
-@keyframes rolling {
-  from { transform: translateX(-20vw); }
-  to { transform: translateX(30vw); }
+@media (max-width: 600px){
+  .left-box-anim{
+    width:0;
+    height:0;
+    margin:0;
+    padding:0;
+    border-color: transparent;
+  }
 }
-
+@keyframes rolling {
+  from { transform: translateX(-10vw); }
+  to { transform: translateX(10vw); }
+}
+p, pre {
+  color: white;
+  font-size: 2rem;
+  font-family: 'CMD', monospace;
+  animation: textShadow 10s ease-in-out infinite;
+  text-align: left;
+  padding: 0;
+  margin: .1em;
+}
 /*--*/
-
-
-
 @font-face {
     font-family: 'CMD';
     src: url('fonts/CMD.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'spacemono';
     src: url('fonts/SpaceMono-Regular.ttf') format('opentype');
@@ -153,17 +181,6 @@ body{
     opacity: 0;
     pointer-events: none;
 }
-/*--*/
-p, pre {
-  color: white;
-  font-size: 2rem;
-  font-family: 'CMD', monospace;
-  animation: textShadow 10s ease-in-out infinite;
-  text-align: left;
-  padding: 0;
-  margin: .1em;
-}
-/*chromatic abberation effect*/
 @keyframes textShadow {
   0% {
     text-shadow:
