@@ -6,7 +6,7 @@
 }
 body{
   background-image: url('assets/textures/pockmarksdark.gif'),url('assets/textures/hubble_ngc2031-jpg-3832570715.jpg');
-  background-repeat:repeat-x;
+  background-repeat:repeat;
   font-family: 'CMD';
 }
 .bottom-flex{
