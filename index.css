@@ -1,13 +1,39 @@
 body{
-  background-image: url('assets/textures/space.jpg');
+  background-image: url('assets/textures/pockmarksdark.gif'),url('assets/textures/hubble_ngc2031-jpg-3832570715.jpg');
+  background-repeat:repeat-x;
   font-family: 'CMD';
   overflow: hidden;
-  margin-left: 12px;
+  margin: 0px;
 }
-.cover {
-  background-image: url('assets/textures/pockmarksdark.gif');
-  position: absolute;
-  fill: cover;
+
+.top-right-corner {
+    position: fixed;
+    top: -70%;
+    right: -25%;
+    position: fixed;
+    overflow: clip;
+}
+.bottom-halfL{
+    position: fixed;
+    top: 50%;
+  left:0;
+    position: fixed;
+    overflow: clip;
+}
+.bottom-halfR{
+    position: fixed;
+    top: 50%;
+  right:0;
+    position: fixed;
+    overflow: clip;
+}
+.black-box{
+  width:100vw;
+  height:50vh;
+  background-color: black;
+  top: 50%;
+  position: fixed;
+  
 }
 /*--*/
 @font-face {
@@ -240,30 +266,3 @@ pre{
     overflow: hidden;
     pointer-events: none;
 }
-
-.scanline, .scanline1 {
-    width: 100vw;
-    height: 100px;
-    z-index: 8;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(255, 255, 255, 0.2) 10%,
-        rgba(0, 0, 0, 0.1) 100%
-    );
-    opacity: 0.1;
-    position: absolute;
-    bottom: 100%;
-    animation: scanline 10s linear infinite;
-    pointer-events: none;	
-}
-@keyframes scanline {
-    0% {
-        bottom: 98%;
-    }
-    100% {
-        bottom: 12.4%;
-    }
-}
-
-
