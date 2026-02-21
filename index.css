@@ -10,41 +10,71 @@ body{
   font-family: 'CMD';
 }
 .bottom-flex{
-  bottom: 0%;
+  bottom: 2%;
+  margin-bottom: 1rem;
   display: flex;
   z-index: 2;
   position: fixed;
   justify-content: center;
   width: 100%;
   height: 20%;
+  overflow: scroll;
+}
+@media (max-width: 600px) {
+    .bottom-flex {
+        flex-direction: column; 
+        height: 37vh;
+    }
 }
 
+
 .bottom-text-box p:hover {
-  transform: scale(110%);
+  transform: scale(1.1);
   
 }
 .bottom-text-box p {
   border: 2px dashed black;
   padding: 1em;
-  margin: 1em;
-  transform: 8s ease-in-out;
+  margin: .5em;
+  transform: transform 2s ease-in-out;
   background:
   linear-gradient(#000, #000) padding-box,
   repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple, red) border-box;
   background-size: auto, 200% 100%;
   animation: rainbow 9s linear infinite;
 }
+@media (max-width: 600px){
+  .bottom-text-box p {
+    margin-top:7vh; 
+  }
+}
 @keyframes rainbow {
   from { background-position: 0 0, -100vh 0; }
   to   { background-position: 0 0, 100vh 0; }
 }
 .top-right-corner {
-    position: fixed;
-    top: -70%;
-    right: -25%;
-    position: fixed;
-    overflow: clip;
-    animation: spin 480s linear infinite;
+  transition: transform 1s ease-in-out;
+  translate: 40vw -50vh;
+}
+
+.top-right-corner:hover { transform: scale(.98); }
+
+.spin {
+  animation: spin 480s linear infinite;
+  overflow: clip;
+  scroll-behavior: unset;
+  position: fixed;
+}
+
+@media (max-width: 600px){
+  .spin {
+    animation-duration: 90s;
+  }
+}
+
+@media (min-width: 600px){
+  .top-right-corner {
+  }
 }
 @keyframes spin {
   from { transform: rotate(0deg); }
@@ -73,14 +103,19 @@ body{
   position: fixed;
   z-index: 0;
 }
+@media (min-width: 600px){
+  .left-box{
+      margin-top: -3.56em;
+  }
+}
 .left-box{
   background-image: url('assets/textures/badstatic.gif');
   border: double white;
   margin-left: -1rem;
-  margin-top: -3.56em;
   padding-left: 10%;
   z-index: 5;
 }
+@media (min-width: 600px){ 
 .left-box-anim{
     background-color: transparent;
     border: dashed grey;
@@ -90,7 +125,7 @@ body{
     color: transparent;
     height: 4rem;
     animation: rolling 3s linear infinite;
-}
+  }}
 
 @keyframes rolling {
   from { transform: translateX(-20vw); }
