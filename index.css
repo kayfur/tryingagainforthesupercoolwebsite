@@ -9,7 +9,35 @@ body{
   background-repeat:repeat-x;
   font-family: 'CMD';
 }
+.bottom-flex{
+  bottom: 0%;
+  display: flex;
+  z-index: 2;
+  position: fixed;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+}
 
+.bottom-text-box p:hover {
+  transform: scale(110%);
+  
+}
+.bottom-text-box p {
+  border: 2px dashed black;
+  padding: 1em;
+  margin: 1em;
+  transform: 8s ease-in-out;
+  background:
+  linear-gradient(#000, #000) padding-box,
+  repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple, red) border-box;
+  background-size: auto, 200% 100%;
+  animation: rainbow 9s linear infinite;
+}
+@keyframes rainbow {
+  from { background-position: 0 0, -100vh 0; }
+  to   { background-position: 0 0, 100vh 0; }
+}
 .top-right-corner {
     position: fixed;
     top: -70%;
@@ -43,11 +71,36 @@ body{
   top: 50%;
   left:0;
   position: fixed;
+  z-index: 0;
 }
 .left-box{
   background-image: url('assets/textures/badstatic.gif');
+  border: double white;
+  margin-left: -1rem;
+  margin-top: -3.56em;
+  padding-left: 10%;
+  z-index: 5;
 }
+.left-box-anim{
+    background-color: transparent;
+    border: dashed grey;
+    margin-top:10%;
+    width: 110vw;
+    margin-left:-40%;
+    color: transparent;
+    height: 4rem;
+    animation: rolling 3s linear infinite;
+}
+
+@keyframes rolling {
+  from { transform: translateX(-20vw); }
+  to { transform: translateX(30vw); }
+}
+
 /*--*/
+
+
+
 @font-face {
     font-family: 'CMD';
     src: url('fonts/CMD.ttf') format('opentype');
@@ -72,7 +125,8 @@ p, pre {
   font-family: 'CMD', monospace;
   animation: textShadow 10s ease-in-out infinite;
   text-align: left;
-  margin: 10%;
+  padding: 0;
+  margin: .1em;
 }
 /*chromatic abberation effect*/
 @keyframes textShadow {
