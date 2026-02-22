@@ -69,6 +69,16 @@ body{
   75% {transform: translateY(1%)}
   100% {transform: translateY(-2%)}
 }
+.tiny-boat-box{
+  bottom: 49%;
+  position:fixed;
+  z-index: 1;
+  animation: sail 150s linear infinite;
+}
+@keyframes sail{
+  from{transform: translatex(-1vw)}
+  to{transform: translatex(101vw)}
+}
 @media (max-width: 600px){
   .top-right-corner{
     translate: 0vw 30vh;
