@@ -1,3 +1,96 @@
+/*tiny guy*/
+.base-for-tiny-boat{
+  bottom: 49%;
+  position:fixed;
+  z-index: 1;
+  animation: sail 150s linear infinite;
+}
+/*fancy highlighting for the little critter*/
+.tiny-boat .base-for-tiny-boat {
+  display: block;
+
+}
+.tiny-boat .highlight-for-tiny-boat {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  
+
+  background-image: url("assets/textures/dithertileyellow.gif");
+  background-repeat: repeat;
+  background-size: auto;
+
+  -webkit-mask-image: url("assets/textures/tinyassboat.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+
+  mask-image: url("assets/textures/tinyassboat.png");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: left -1vw bottom 49%;
+  animation: sail 150s linear infinite;
+
+  transition: opacity 1s ease;
+}
+.tiny-boat:hover .highlight-for-tiny-boat {
+  opacity: 1;
+}
+
+
+/*big boat*/
+.boat {
+  position: fixed;
+  bottom: -2%;
+  z-index: 1;
+  animation: bob 15s ease-in-out infinite;
+}
+/*fancy highlight stuff for the bigggg boat*/
+.boat .base-for-boat {
+  display: block;
+  width: 100%;
+}
+
+.boat .highlight-for-boat {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  
+
+  background-image: url("assets/textures/dithertileyellow.gif");
+  background-repeat: repeat;
+  background-size: auto;
+
+  -webkit-mask-image: url("assets/textures/boat-long-brightANDitsalsopointyomg.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+
+  mask-image: url("assets/textures/boat-long-brightANDitsalsopointyomg.png");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: left 0% bottom 0%;
+
+  transition: opacity 1s ease;
+}
+
+.boat:hover .highlight-for-boat {
+  opacity: 1;
+}
+/*fancy highlight stuffs end here*/
+
+
+
+
+
+
+
+
+
+
+
 body{
   background-image: url('assets/textures/ultradarkclouds.gif');
   overflow: hidden;
@@ -58,45 +151,6 @@ body{
   translate: 40vw -50vh;
   overflow-x: clip;
 }
-.boat {
-  position: fixed;
-  bottom: -2%;
-  z-index: 1;
-  animation: bob 15s ease-in-out infinite;
-}
-
-.boat .base {
-  display: block;
-  width: 100%;
-}
-
-.boat .highlight {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  
-
-  background-image: url("assets/textures/dithertileyellow.gif");
-  background-repeat: repeat;
-  background-size: auto;
-
-  -webkit-mask-image: url("assets/textures/boat-long-brightANDitsalsopointyomg.png");
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: contain;
-  -webkit-mask-position: center;
-
-  mask-image: url("assets/textures/boat-long-brightANDitsalsopointyomg.png");
-  mask-repeat: no-repeat;
-  mask-size: cover;
-  mask-position: left 0% bottom 0%;
-
-  transition: opacity 1s ease;
-}
-
-.boat:hover .highlight {
-  opacity: 1;
-}
 @keyframes bob {
   0% {transform: translateY(-2%)}
   25% {transform: translateY(2%)}
@@ -104,12 +158,7 @@ body{
   75% {transform: translateY(1%)}
   100% {transform: translateY(-2%)}
 }
-.tiny-boat-box{
-  bottom: 49%;
-  position:fixed;
-  z-index: 1;
-  animation: sail 150s linear infinite;
-}
+
 @keyframes sail{
   from{transform: translatex(-1vw)}
   to{transform: translatex(101vw)}
