@@ -1,5 +1,5 @@
 body{
-  background-image: url('assets/textures/pockmarksdark.gif');
+  background-image: url('assets/textures/ultradarkclouds.gif');
   overflow: hidden;
   font-family: 'CMD';
 }
@@ -20,6 +20,7 @@ body{
   width: 100%;
   height: 20%;
   overflow: scroll;
+  pointer-events: none;
 }
 @media (max-width: 600px) {
     .bottom-flex {
@@ -41,6 +42,7 @@ body{
   repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple, red) border-box;
   background-size: auto, 200% 100%;
   animation: rainbow 9s linear infinite;
+  pointer-events: all;
 }
 @media (max-width: 600px){
   .bottom-text-box p {
@@ -56,12 +58,45 @@ body{
   translate: 40vw -50vh;
   overflow-x: clip;
 }
-.boat{
-  margin:0;
+.boat {
   position: fixed;
-  z-index: 1;
   bottom: -2%;
+  z-index: 1;
   animation: bob 15s ease-in-out infinite;
+}
+
+/* Base PNG */
+.boat .base {
+  display: block;
+  width: 100%;
+}
+
+/* Highlight layer */
+.boat .highlight {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+
+  background-image: url("assets/textures/hazeflow.gif");
+  background-repeat: repeat;
+  background-size: auto;
+
+  -webkit-mask-image: url("assets/textures/boat-long-brightANDitsalsopointyomg.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+
+  mask-image: url("assets/textures/boat-long-brightANDitsalsopointyomg.png");
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+
+  transition: opacity 0.3s ease;
+}
+
+.boat:hover .highlight {
+  opacity: 1;
 }
 @keyframes bob {
   0% {transform: translateY(-2%)}
