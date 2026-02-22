@@ -65,13 +65,11 @@ body{
   animation: bob 15s ease-in-out infinite;
 }
 
-/* Base PNG */
 .boat .base {
   display: block;
   width: 100%;
 }
 
-/* Highlight layer */
 .boat .highlight {
   position: absolute;
   inset: 0;
@@ -92,7 +90,7 @@ body{
   mask-size: contain;
   mask-position: center;
 
-  transition: opacity 0.3s ease;
+  transition: opacity 1s ease;
 }
 
 .boat:hover .highlight {
@@ -124,7 +122,7 @@ body{
   transform: scale(.98);
 }
 .spin {
-  animation: spin 480s linear infinite;
+  animation: spin 400s cubic-bezier( 0.00, 0.43, 1.00, 0.57 ) infinite;
   overflow: clip;
   scroll-behavior: revert-layer;
   position: fixed;
@@ -144,8 +142,9 @@ body{
   }
 }
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0% { transform: rotate(170deg); }
+  50% { transform: rotate(120deg); }
+   100% { transform: rotate(170deg); }
 }
 .bottom-halfL{
     position: fixed;
