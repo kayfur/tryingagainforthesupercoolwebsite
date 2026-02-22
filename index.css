@@ -55,6 +55,12 @@ body{
   translate: 40vw -50vh;
   overflow-x: clip;
 }
+.boat{
+  margin:0;
+  position: fixed;
+  z-index: 1;
+  bottom: 0%;
+}
 @media (max-width: 600px){
   .top-right-corner{
     translate: 0vw 30vh;
