@@ -9,6 +9,7 @@ body{
       background-repeat:repeat-x;
   }
 }
+
 .bottom-flex{
   bottom: 2%;
   margin-bottom: 1rem;
@@ -84,12 +85,19 @@ body{
     translate: 0vw 30vh;
   }
 }
-.top-right-corner:hover { transform: scale(.98); }
+.top-right-corner:hover { 
+  transform: scale(.98);
+}
 .spin {
   animation: spin 480s linear infinite;
   overflow: clip;
   scroll-behavior: revert-layer;
   position: fixed;
+  transition: all 2s cubic-bezier( 0.83, 0.23, 0.32, 0.77 );
+}
+.spin:hover{
+    filter: drop-shadow(-50px -50px 0 rgba(255,0,0,10)) drop-shadow(50px -50px 0 rgba(0,255,0,10)) drop-shadow(-50px 50px 0 rgba(0,0,255,10));
+    transform: scale(1.1)
 }
 @media (max-width: 600px){
   .spin {
