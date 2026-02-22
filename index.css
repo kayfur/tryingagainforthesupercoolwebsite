@@ -59,7 +59,15 @@ body{
   margin:0;
   position: fixed;
   z-index: 1;
-  bottom: 0%;
+  bottom: -2%;
+  animation: bob 15s ease-in-out infinite;
+}
+@keyframes bob {
+  0% {transform: translateY(-2%)}
+  25% {transform: translateY(2%)}
+  50% {transform: translateY(-2%)}
+  75% {transform: translateY(1%)}
+  100% {transform: translateY(-2%)}
 }
 @media (max-width: 600px){
   .top-right-corner{
