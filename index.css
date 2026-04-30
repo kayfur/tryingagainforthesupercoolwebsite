@@ -1,3 +1,14 @@
+
+:root {
+  --invert-all: 1;
+  --invert-all-2: calc(var(--invert-all) - 0.7)
+}
+
+html{
+  filter: invert(var(--invert-all));
+  transition: all 3s ease;
+}
+
 /*tiny guy*/
 .base-for-tiny-boat{
   bottom: 49%;
@@ -10,7 +21,6 @@
   display: block;
     margin: 0;
   padding: 0;
-
 }
 .tiny-boat .highlight-for-tiny-boat {
   position: absolute;
@@ -49,6 +59,7 @@
   bottom: -2%;
   z-index: 1;
   animation: bob 15s ease-in-out infinite;
+  filter: invert(var(--invert-all));
 }
 /*fancy highlight stuff for the bigggg boat*/
 .boat .base-for-boat {
@@ -118,6 +129,7 @@ body{
   height: 20%;
   overflow: scroll;
   pointer-events: none;
+  filter: invert(var(--invert-all));
 }
 @media (max-width: 600px) {
     .bottom-flex {
@@ -206,6 +218,7 @@ body{
     left:0;
     position: fixed;
     overflow: clip;
+     filter: invert(var(--invert-all-2));
 }
 .bottom-halfR{
     position: fixed;
@@ -213,6 +226,7 @@ body{
     right:0;
     position: fixed;
     overflow: clip;
+     filter: invert(var(--invert-all-2));
 }
 .black-box{
   width:120vw;
@@ -222,7 +236,9 @@ body{
   left:0;
   position: fixed;
   z-index: 0;
+   filter: invert(var(--invert-all-2));
 }
+
 @media (min-width: 600px){
   .black-box{
     bottom: -5%;
@@ -314,6 +330,7 @@ p, pre {
     pointer-events: none;
 }
 @keyframes textShadow {
+  filter: invert(var(--invert-all));
   0% {
     text-shadow:
       0rem 0 1px rgba(0,30,255,0.5),
