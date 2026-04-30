@@ -1,8 +1,4 @@
 
-:root {
-  --invert-all: 1;
-  --invert-all-2: calc(var(--invert-all) - 0.7)
-}
 
 html{
   filter: invert(var(--invert-all));
