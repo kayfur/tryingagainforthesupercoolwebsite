@@ -6,7 +6,19 @@
       
   </head>
   <body>
-  <div class="left-box-anim">
+  <script setup="">
+const darkMode = () => {
+  const root = document.documentElement
+  root.style.setProperty('--invert-all', '1')
+}
+</script>
+
+<style>:root {
+  --invert-all: 1;
+  --invert-all-2: calc(var(--invert-all) - 0.7)
+}
+</style>    
+    <div class="left-box-anim">
   </div>
       <div class="top-right-corner">
           <img alt="moon" hight="width" class="spin" width="100%" src="assets/textures/whiteball.png">
@@ -15,24 +27,29 @@
       <div class="left-box">
    <p>columns of brilliant light </p>
   </div>
-<div class="bottom-flex">
+<div class="boat">
+  <img src="assets/textures/boat-long-brightANDitsalsopointyomg.png" class="base-for-boat">
+  <div class="highlight-for-boat">
+  </div>
+</div><div class="bottom-flex">
     <div class="bottom-text-box">
         <div class="spacer"></div>
+    
+    <button @click="darkMode">INVERSION</button>
+
         <p>projects</p>
     </div>
     <div class="bottom-text-box">
         <p>contacts</p>
     </div>
     <div class="bottom-text-box">
-        <div class="boat">
-  <img src="assets/textures/boat-long-brightANDitsalsopointyomg.png" class="base-for-boat">
-  <div class="highlight-for-boat">
-  </div>
-</div><p>Blog</p>
+        <p>Blog</p>
     </div>
     <div class="bottom-text-box">
         <p>other!</p>
-</div></div>
+</div>
+    <div onclick="darkMode()"></div>
+</div>
       <div class="tiny-boat">
           <div class="base-for-tiny-boat">
               <img width="20px" height="width" bottom="49%" position="fixed" src="assets/textures/tinyassboat.png">
@@ -40,17 +57,5 @@
       <img class="bottom-halfL" src="assets/textures/waves.gif" width="50%">
       <img class="bottom-halfR" src="assets/wavesR.gif" width="50%">
 
-<script>
-const invert = getComputedStyle(root).getPropertyValue('--invert-all');
-  
 
-function darkMode() {
-    if(invert = 1)[
-      document.documentElement.style.setProperty('--invert-all', '0');
-    } else {
-      document.documentElement.style.setProperty('--invert-all', '1');
-
-    }
-  }
-
-</script></body></html>
+</body></html>
