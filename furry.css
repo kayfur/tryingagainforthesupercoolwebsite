@@ -1,5 +1,48 @@
-body{}
-.red{}
-.orange{}
-.blue{}
-.softred{}
+
+body{
+  background-color: rgb(222,222,255);
+  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0px;
+  font-family: spacemono;
+}
+@media (max-width: 600px){
+  body{
+      margin-top: 10vh
+  }
+}
+.banner{
+  top:0%;
+  height: 10vh;
+}
+.middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  border: solid 5px red; 
+  border-radius: 20px;
+}
+@media (max-width: 600px){
+  .middle{
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+}
+
+.button{
+  padding: 5vh;
+  border: solid 5px blue;
+  width: 40vw;
+  border-radius: 25px;
+  background-color: rgba(100,150,100,.6);
+}
+@font-face {
+    font-family: 'spacemono';
+    src: url('fonts/SpaceMono-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
