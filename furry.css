@@ -1,4 +1,25 @@
 
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.2s ease;
+}
+.menu.open {
+  max-height: 70vh;
+}
+.menu ul {
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  background: rgba(200,160,160,0.7);
+}
+.menu li {
+  margin: 5px 0;
+}
+.menu a {
+  color: pink;
+  text-decoration: none;
+}
 body{
   background-color: rgb(222,222,255);
   width: 100vw;
@@ -32,7 +53,6 @@ body{
   align-items: center;
   }
 }
-
 .button{
   padding: 5vh;
   border: solid 5px blue;
