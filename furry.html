@@ -1,16 +1,60 @@
 <html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITLE</title>
-    <link href="furry.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  <body>
-    <img src="assets/textures/hubble_ngc2031-jpg-3832570715.jpg" class="banner">
-    <div class="middle">
-      <p class="button">content1</p>
-      <p class="button">content2</p>
-      <p class="button">content3</p>
-      <p class="button">content4</p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TITLE</title>
+  <link href="furry.css" rel="stylesheet" type="text/css" media="all">
+<script>
+function toggleMenu(button) {
+    const allMenus = document.querySelectorAll(".menu");
+    allMenus.forEach(menu => {
+        if (menu !== button.nextElementSibling) {
+            menu.classList.remove("open");
+        }
+    });
+    button.nextElementSibling.classList.toggle("open");
+}
+</script>
+</head>
+<body>
+<div class="middle">
+  <div class="button">
+    <div class="dropdown">
+      <button onclick="toggleMenu(this)">Click Me!</button>
+      <div class="menu">
+        <ul>
+          <li><a href="">Item-1</a></li>
+          <li><a href="">Item-2</a></li>
+          <li><a href="">Item-3</a></li>
+          <li><a href="">Item-4</a></li>
+        </ul>
+      </div>
     </div>
-</body>
-</html>
+  </div>
+  <div class="button">
+    <div class="dropdown">
+      <button onclick="toggleMenu(this)">Click Me!</button>
+      <div class="menu">
+        <ul>
+          <li><a href="">Item-1</a></li>
+          <li><a href="">Item-2</a></li>
+          <li><a href="">Item-3</a></li>
+          <li><a href="">Item-4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="button">
+    <div class="dropdown">
+      <button onclick="toggleMenu(this)">Click Me!</button>
+      <div class="menu">
+        <ul>
+          <li><a href="">Item-1</a></li>
+          <li><a href="">Item-2</a></li>
+          <li><a href="">Item-3</a></li>
+          <li><a href="">Item-4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
