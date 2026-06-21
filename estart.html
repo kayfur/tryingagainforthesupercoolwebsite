@@ -1,1 +1,98 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yayyy yippeee</title>
+<link rel="stylesheet" href="estart.css">
+</head>
+<body>
+<h1 class="welcome">hiya emma</h1>
+  <!-- meow -->
+  <div class=wrapper>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://duckduckgo.com">search</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://youtu.be">youtube</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://mail.google.com/mail/u/0">mail</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://spotify.com">spotify</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://classroom.google.com/u/1/">classroom</a>
+        <a target="_blank" rel="nooppenernoreferrer" href="https://docs.google.com/document/u/1/?tgif=d">docs</a>
+   </div>
+  
+<div class="reminders">
+</div>
+  
+  <div class="weatherbox">  
+      <p class="day" id="0"></p>
+      <p class="description" id="detailedforecast0"></p>
+    <br>
+      <p class="day2" id="1"></p>
+      <p class="description" id="detailedforecast1"></p>
+    <br>
+      <p class="day" id="2"></p>
+      <p class="description" id="detailedforecast2"></p>
+    <br>
+      <p class="day2" id="3"></p>
+      <p class="description" id="detailedforecast3"></p>
+    <br>
+      <p class="day" id="4"></p>
+      <p class="description" id="detailedforecast4"></p>
+        <br>
+      <p class="day2" id="5"></p>
+      <p class="description" id="detailedforecast5"></p>
+    <br>
+      <p class="day" id="6"></p>
+      <p class="description" id="detailedforecast6"></p>
+        <br>
+      <p class="day2" id="7"></p>
+      <p class="description" id="detailedforecast7"></p>
+    <br>
+      <p class="day" id="8"></p>
+      <p class="description" id="detailedforecast8"></p>
+        <br>
+      <p class="day2" id="9"></p>
+      <p class="description" id="detailedforecast9"></p>
+    <br>
+      <p class="day" id="10"></p>
+      <p class="description" id="detailedforecast10"></p>
+        <br>
+      <p class="day2" id="11"></p>
+      <p class="description" id="detailedforecast11"></p>
+    <br>
+      <p class="day" id="12"></p>
+      <p class="description" id="detailedforecast12"></p>
+        <br>
+      <p class="day2" id="13"></p>
+      <p class="description" id="detailedforecast13"></p>
+    <br>
+      <p class="day" id="14"></p>
+      <p class="description" id="detailedforecast14"></p>
+  </div>
+
+  <script>
+    fetch('https://api.weather.gov/gridpoints/SHV/42,16/forecast')
+      .then(response => {
+        if (!response.ok) throw new Error("something fucked up, text kadyn''");
+        return response.json();
+      })
+      .then(data => {
+        const periods = data.properties.periods;
+
+        // meow.... meow
+        for (let i = 0; i < 15; i++) {
+          const period = periods[i];
+          const titleEl = document.getElementById(`${i}`);
+          const descEl = document.getElementById(`detailedforecast${i}`);
+
+          if (titleEl && descEl) {
+            titleEl.textContent = period.name;
+            descEl.textContent = period.detailedForecast;
+          }
+        }
+      })
+      .catch(error => {
+        console.error("something REALLY fucked up, text kadyn", error);
+      });
+  </script>
+</body>
+</html>
